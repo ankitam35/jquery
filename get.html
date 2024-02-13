@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Ajax Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="result"></div>
+    <button>Load Data</button>
+
+    <script>
+      $(document).ready(function () {
+        $("button").click(() => {
+          $.get("https://jsonplaceholder.typicode.com/posts/1", (data) => {
+            $("#result").html(
+              "<p>Title: " + data.title + "</p><p>Body: " + data.body + "</p>"
+            );
+          }).fail((xhr, status, error) => {
+            console.error(status + ": " + error);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

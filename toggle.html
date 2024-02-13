@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(() => {
+        $("#firstBtn").click(() => {
+          $("#first").toggle(3000, () => {
+            alert("Element is Shown");
+          });
+        });
+
+        $("#secondBtn").click(() => {
+          $("#second").toggle();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p id="first">This is first paragraph.</p>
+    <button id="firstBtn">This is first paragraph.</button>
+
+    <p id="second">This is second paragraph.</p>
+    <button id="secondBtn">This is second paragraph.</button>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("button").click(function () {
+          var x = $("form").serializeArray();
+          var y = $("form").serialize();
+          console.log(x);
+          console.log(y);
+          $.each(x, function (i, field) {
+            $("#results").append(field.name + ":" + field.value + " ");
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <form action="">
+      First name: <input type="text" name="FirstName" value="Ajeet" /><br />
+      Last name: <input type="text" name="LastName" value="Maurya" /><br />
+    </form>
+    <button>Serialize form values</button>
+    <div id="results"></div>
+  </body>
+</html>
